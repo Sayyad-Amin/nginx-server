@@ -1,0 +1,38 @@
+# Install Nginx on Debian/Ubuntu
+sudo apt update && sudo apt install -y nginx
+
+# Install Nginx on RHEL/CentOS
+sudo yum install -y epel-release && sudo yum install -y nginx
+
+# Start Nginx service
+sudo systemctl start nginx
+
+# Enable Nginx to start on boot
+sudo systemctl enable nginx
+
+# Restart Nginx (useful after configuration changes)
+sudo systemctl restart nginx
+
+# Reload Nginx without downtime (useful for minor config updates)
+sudo systemctl reload nginx
+
+# Check Nginx service status
+sudo systemctl status nginx
+
+# Stop Nginx service
+sudo systemctl stop nginx
+
+# Test Nginx configuration for syntax errors before reloading
+sudo nginx -t
+
+# View Nginx error logs (useful for debugging issues)
+sudo tail -f /var/log/nginx/error.log
+
+# View Nginx access logs (track incoming requests)
+sudo tail -f /var/log/nginx/access.log
+
+# Check Nginx version
+nginx -v
+
+# List enabled sites (Debian/Ubuntu)
+ls /etc/nginx/sites-enabled/
