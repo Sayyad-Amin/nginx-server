@@ -1,1 +1,16 @@
+# I just launch 2 ec2-instances one is as nginx-server used for reverse proxy and second as apache-server 
+# Intersting to know my apache server only knows nginx public-ip and not open for outer-world
+# When an http request is made to nginx -server then this will forward this request to apache
 
+events{}
+
+http{
+        server{
+                listen 8080;
+        #       root /usr/share/nginx/html/;
+                location /{
+                        proxy_pass ec2-public-ip;
+        }
+}
+
+}
