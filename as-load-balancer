@@ -1,4 +1,6 @@
-
+# I just launch 3 ec2-instances this time one is as nginx-server used for reverse proxy and second and third as apache-servers 
+# Intersting to know my both apache servers only knows nginx public-ip and not open for outer-world
+# When an http request is made to nginx -server then this will forward this request to apache servers distrubuted manner using round robin principle.
 
 events{}
 
